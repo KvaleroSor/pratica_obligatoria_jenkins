@@ -48,7 +48,7 @@ async function main() {
         console.log('Fent push dels canvis...');
         const setUrlResult = await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
         console.log('Set URL Result:', setUrlResult.stdout, setUrlResult.stderr);
-        const pushResult = await runCommand('git push origin ci_jenkins');
+        const pushResult = await runCommand('git push origin HEAD:ci_jenkins');
         console.log('Push Result:', pushResult.stdout, pushResult.stderr);
         
         console.log('Canvis afegits correctament.');
