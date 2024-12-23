@@ -58,5 +58,13 @@ pipeline {
                 sh "node ./jenkinsScripts/indexUpdateReadme.js '${env.result_tests}'"
             }
         }
+
+        stage('Push Changes'){
+            steps{
+                script{
+                    sh "node ./jenkinsScripts/indexPushChanges.js '${params.executor}' '${params.motiu}'"
+                }
+            }
+        }
     }
 }
