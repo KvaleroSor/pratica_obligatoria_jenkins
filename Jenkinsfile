@@ -64,7 +64,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'Id_github', usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_PASSWORD')]) {
                     script {
-                        sh "node ./jenkinsScripts/indexPushChanges.js ${params.executor} ${params.motiu}"
+                        sh "node ./jenkinsScripts/indexPushChanges.js '${params.executor}' '${params.motiu}'"
                     }
                 }
             }
