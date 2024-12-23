@@ -1,21 +1,21 @@
-pipeline{
+pipeline {
     agent any
-    tools{
+    tools {
         nodejs 'Node Js'
     }
-    environment{
+    environment {
         BOT_TOKEN = credentials('BotToken')
     }
-    parameters{
+    parameters {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
         string(name: 'motiu', defaultValue: 'missatge', description: 'Motíu per el qual estem executant la pipeline')
         string(name: 'chatId', defaultValue: 'num_chatId', description: 'Número del chat de telegram')
     }
 
-    stages{
-        stage('Petició de dades'){
-            steps{
-                script{
+    stages {
+        stage('Petició de dades') {
+            steps {
+                script {
                     env.executor = params.executor
                     env.motiu = params.motiu
                     env.chatId = params.chatId
@@ -26,18 +26,17 @@ pipeline{
             }
         }
 
-        stage('Executant linter'){
-            steps{
+        stage('Executant linter') {
+            steps {
                 //Instal·lant dependències
                 sh 'npm install'
-            }
-            steps{
+
                 //Executant linter
-                script{
+                script {
                     env.result = sh(script: 'npm run lint', returnStatus: true)
                     sh "node ./jenkinsScripts/indexLinter.js '${env.result}'"
                 }
             }
-        }    
+        }
     }
 }
