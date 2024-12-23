@@ -17,10 +17,6 @@ pipeline {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
         string(name: 'motiu', defaultValue: 'missatge', description: 'Motíu per el qual estem executant la pipeline')
         string(name: 'chatId', defaultValue: 'num_chatId', description: 'Número del chat de telegram')
-    // string(name: 'result_linter', defaultValue: 'succes', description: 'Resultat execució linter')
-    // string(name: 'result_test_stage', defaultValue: 'succes', description: 'Resultat execució test jest')
-    // string(name: 'result_update_readme', defaultValue: 'succes', description: 'Resultat execució update_readme')
-    // string(name: 'result_deploy', defaultValue: 'succes', description: 'Resultat execució deploy')
     }
 
     stages {
@@ -45,6 +41,7 @@ pipeline {
                 //Executant linter
                 script {
                     env.RESULT_LINTER = sh(script: 'npm run lint', returnStatus: true)
+                    echo "Resultat linter -> '${RESULT_LINTER}'"
                     sh "node ./jenkinsScripts/indexLinter.js '${env.RESULT_LINTER}'"
                 }
             }
