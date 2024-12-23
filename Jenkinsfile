@@ -25,6 +25,19 @@ pipeline{
                 }
             }
         }
-        
+
+        stage('Executant linter'){
+            steps{
+                //Instal·lant dependències
+                sh 'npm install'
+            }
+            steps{
+                //Executant linter
+                script{
+                    env.result = sh(script: 'npm run lint', returnStatus: true)
+                    sh "node ./jenkinsScripts/indexLinter.js '${env.result}'"
+                }
+            }
+        }    
     }
 }
