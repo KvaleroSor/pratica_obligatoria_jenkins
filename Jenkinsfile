@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         BOT_TOKEN = credentials('BotToken')
-        VERCEL_ORG_ID = credendials('ORG_ID_VERCEL')
+        VERCEL_ORG_ID = credentials('ORG_ID_VERCEL')
         VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
     }
