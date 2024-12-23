@@ -39,15 +39,23 @@ pipeline {
             }
         }
 
-        stage('Test'){
-            steps{
-                sh 'npm run test'
+        stage('Test') {
+            steps {
+                script {
+                    env.result_tests = sh(script: 'npm run test', returnStatus: true)
+                }
             }
         }
 
-        stage('Build'){
-            steps{
+        stage('Build') {
+            steps {
                 sh 'npm run build'
+            }
+        }
+
+        stage('Update Readme') {
+            steps {
+                sh "node ./jenkinsScripts/indexUpdateReadme.js '${env.result_tests}'"
             }
         }
     }
