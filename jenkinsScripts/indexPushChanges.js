@@ -17,8 +17,14 @@ async function main() {
     const motiu = process.argv[3];
 
     const commitMsg = `Pipeline executada per ${executor}. Motiu: ${motiu}`;
+    const gitUsername = 'KvaleroSor';
+    const gitUserEmail = 'kvalerosor@hotmail.com';
 
     try {
+        console.log('Configurant git');
+        await runCommand(`git config --global user.name "${gitUsername}"`); 
+        await runCommand(`git config --global user.email "${gitUserEmail}"`);
+
         console.log('Afegint canvis...');
         await runCommand('git add README.md');
 
