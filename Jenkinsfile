@@ -93,16 +93,13 @@ pipeline {
                 }
             }
         }
-
-        stage('Notification'){
-            always{
-                steps{
-                    script{
-                        sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}'"
-                    }
-                }
+    }
+    post{
+        always{
+            script{
+                sh 'npm install node-telegram-bot-api'
+                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.resutat_msg}' '${env.chatId}'"
             }
-
-        }
+        }   
     }
 }
