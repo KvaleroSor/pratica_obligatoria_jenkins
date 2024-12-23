@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-let users = require("data/users.json");
+let users = require("../data/users.json");
 
 export const usersRepo = {
   getAll,

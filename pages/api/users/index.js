@@ -1,4 +1,4 @@
-import { usersRepo } from "helpers/users-repo";
+import { usersRepo } from "../../../helpers/users-repo";
 
 export default handler;
 

@@ -1,6 +1,4 @@
-import { usersRepo } from "helpers/users-repo";
-
-export default handler;
+import { usersRepo } from "../../../helpers/users-repo";
 
 function handler(req, res) {
   switch (req.method) {
@@ -33,3 +31,5 @@ function handler(req, res) {
     return res.status(200).json({});
   }
 }
+
+export default handler;
