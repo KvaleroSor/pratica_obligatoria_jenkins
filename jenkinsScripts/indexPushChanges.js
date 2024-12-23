@@ -49,6 +49,7 @@ async function main() {
         }
         if(error.message){
             console.error('message -> ' + error.message);
+        }
         process.exit(1);
     }
 }
