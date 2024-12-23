@@ -8,7 +8,7 @@ pipeline{
     }
     parameters{
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
-        string(name: 'motiu', defaultValue: 'practica obligatoria jenkins', description: 'Motíu per el qual estem executant la pipeline')
+        string(name: 'motiu', defaultValue: 'missatge', description: 'Motíu per el qual estem executant la pipeline')
         string(name: 'chatId', defaultValue: 'num_chatId', description: 'Número del chat de telegram')
     }
 
