@@ -32,7 +32,8 @@ async function main() {
         await runCommand('git add README.md');
 
         console.log('Fent commit dels canvis...');
-        await runCommand(`git commit -m "${commitMsg}"`);
+        const commitResult = await runCommand(`git commit -m "${commitMsg}"`);
+        console.log('Commit result' + commitResult);
 
         console.log('Fent push dels canvis...');
         await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
