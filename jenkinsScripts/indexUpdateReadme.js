@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 async function main() {
     try {        
         console.log('Starting the script...');
-        console.log('Mostrem el directori actual de treball:', process.cwd());
+        // console.log('Mostrem el directori actual de treball:', process.cwd());
 
         const resultat_test = process.argv[2];
         const img_error = 'https://img.shields.io/badge/test-failure-red';
