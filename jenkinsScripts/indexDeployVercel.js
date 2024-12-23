@@ -12,21 +12,21 @@ function runCommand(command) {
     });
 }
 
-async function deployVercel() {
+async function deployToVercel() {
     const vercelToken = process.env.VERCEL_TOKEN;
     const vercelOrgId = process.env.VERCEL_ORG_ID;
     const vercelProjectId = process.env.VERCEL_PROJECT_ID;
 
     try {
-        console.log("Desplegant projecte a Vercel...");
-        const deployCommand = `npx vercel --token ${vercelToken} --scope ${vercelOrgId} --project-id ${vercelProjectId}`;
+        console.log("Desplegant el projecte a Vercel...");
+        const deployCommand = `npx vercel --token ${vercelToken} --prod`;
         await runCommand(deployCommand);
-        console.log("Despliegue a Vercel completado exitosamente.");
+        console.log("Despliegue completat exitosament ✅.");
     } catch (error) {
-        console.error("Error al desplegar el proyecto a Vercel.");
+        console.error("Error al desplegar el projecte a Vercel ❌.");
         console.error(error);
         process.exit(1);
     }
 }
 
-deployVercel();
+deployToVercel();
