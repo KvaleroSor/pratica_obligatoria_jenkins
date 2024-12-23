@@ -35,7 +35,7 @@ async function main() {
         await runCommand(`git commit -m "${commitMsg}"`);
 
         console.log('Fent push dels canvis...');
-        await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
+        // await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
         await runCommand('git push origin ci_jenkins');
         
         console.log('Canvis afegits correctament.');
