@@ -32,7 +32,7 @@ async function main() {
         await runCommand(`git commit -m "${commitMsg}"`);
 
         console.log('Fent push dels canvis...');
-        await runCommand('git push origin refs/heads/ci_jenkins');
+        await runCommand('git push origin');
         
         console.log('Canvis afegits correctament.');
     } catch (error) {
