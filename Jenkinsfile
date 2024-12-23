@@ -62,7 +62,7 @@ pipeline {
 
         stage('Push Changes') {
             steps {
-                withCredentials([string(credentialsId: 'Id_github', usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'Id_github', usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_PASSWORD')]) {
                     script {
                         sh "node ./jenkinsScripts/indexPushChanges.js '${params.executor}' '${params.motiu}' '${GITHUB_TOKEN}'"
                     }
