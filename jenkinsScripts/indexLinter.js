@@ -2,6 +2,8 @@ const result = process.argv[2];
 
 console.log(result);
 
-result !== 0
-    ? console.log("Linter ha encontrado errors...")
-    : console.log("Linter ha finalizado sin errores...");
+if(result !== 0){
+    console.log('Linter ha encontrado errores ...❌');
+}else{
+    console.log('Linter no ha enctronado ningún error ...✅');
+}
