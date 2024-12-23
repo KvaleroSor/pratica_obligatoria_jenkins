@@ -41,7 +41,14 @@ async function main() {
         console.log('Canvis afegits correctament.');
     } catch (error) {
         console.error(`Error al intentar pujar els canvis: ${error}`);
-        console.error(error);
+        if(error.stderr){
+            console.error('stderr -> ' + error.stderr);
+        }
+        if(error.stdout){
+            console.error('stdout -> ' + error.stdout);
+        }
+        if(error.message){
+            console.error('message -> ' + error.message);
         process.exit(1);
     }
 }
