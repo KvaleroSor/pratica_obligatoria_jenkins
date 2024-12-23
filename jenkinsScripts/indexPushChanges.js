@@ -24,32 +24,26 @@ async function main() {
     
     try {
         console.log('Configurant git');
-        const configName = await runCommand(`git config --global user.name "${gitUsername}"`);
-        console.log('Config Name:', configName.stdout, configName.stderr);
-        const configEmail = await runCommand(`git config --global user.email "${gitUserEmail}"`);
-        console.log('Config Email:', configEmail.stdout, configEmail.stderr);
+        await runCommand(`git config --global user.name "${gitUsername}"`);
+        await runCommand(`git config --global user.email "${gitUserEmail}"`);
 
         console.log('Afegint canvis...');
-        const addChanges = await runCommand('git add .');
-        console.log('Add Changes:', addChanges.stdout, addChanges.stderr);
+        await runCommand('git add .');
 
         console.log('Verificant estat de git abans del commit:');
-        const statusBeforeCommit = await runCommand('git status');
-        console.log('Status Before Commit:', statusBeforeCommit.stdout, statusBeforeCommit.stderr);
+        const statusBefore = await runCommand('git status');
+
+        console.log(statusBefore);
 
         console.log('Fent commit dels canvis...');
-        const commitResult = await runCommand(`git commit -m "${commitMsg}"`);
-        console.log('Commit Result:', commitResult.stdout, commitResult.stderr);
+        await runCommand(`git commit -m "${commitMsg}"`);
 
         console.log('Verificant estat de git després del commit:');
-        const statusAfterCommit = await runCommand('git status');
-        console.log('Status After Commit:', statusAfterCommit.stdout, statusAfterCommit.stderr);
+        await runCommand('git status');
 
         console.log('Fent push dels canvis...');
-        const setUrlResult = await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
-        console.log('Set URL Result:', setUrlResult.stdout, setUrlResult.stderr);
-        const pushResult = await runCommand('git push origin HEAD:ci_jenkins');
-        console.log('Push Result:', pushResult.stdout, pushResult.stderr);
+        await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
+        await runCommand('git push origin HEAD:ci_jenkins');
         
         console.log('Canvis afegits correctament.');
     } catch (error) {
