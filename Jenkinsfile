@@ -17,11 +17,10 @@ pipeline {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
         string(name: 'motiu', defaultValue: 'missatge', description: 'Motíu per el qual estem executant la pipeline')
         string(name: 'chatId', defaultValue: 'num_chatId', description: 'Número del chat de telegram')
-        // string(name: 'result_linter', defaultValue: 'succes', description: 'Resultat execució linter')
-        // string(name: 'result_test_stage', defaultValue: 'succes', description: 'Resultat execució test jest')
-        // string(name: 'result_update_readme', defaultValue: 'succes', description: 'Resultat execució update_readme')
-        // string(name: 'result_deploy', defaultValue: 'succes', description: 'Resultat execució deploy')
-        
+    // string(name: 'result_linter', defaultValue: 'succes', description: 'Resultat execució linter')
+    // string(name: 'result_test_stage', defaultValue: 'succes', description: 'Resultat execució test jest')
+    // string(name: 'result_update_readme', defaultValue: 'succes', description: 'Resultat execució update_readme')
+    // string(name: 'result_deploy', defaultValue: 'succes', description: 'Resultat execució deploy')
     }
 
     stages {
@@ -67,7 +66,9 @@ pipeline {
 
         stage('Update Readme') {
             steps {
-                env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStatus: true) 
+                script {
+                    env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStatus: true)
+                }
             }
         }
 
@@ -81,25 +82,25 @@ pipeline {
             }
         }
 
-        stage('Deploy to Vercel'){
-            when{
+        stage('Deploy to Vercel') {
+            when {
                 expression {
                     expression { currentBuild.result == 'SUCCESS' || currentBuild.result == null }
                 }
             }
             steps {
                 script {
-                    env.RESULT_DEPLOY = sh(script: "node ./jenkinsScripts/indexDeployVercel.js", returnStatus: true) 
+                    env.RESULT_DEPLOY = sh(script: 'node ./jenkinsScripts/indexDeployVercel.js', returnStatus: true)
                 }
             }
         }
     }
-    post{
-        always{
-            script{
+    post {
+        always {
+            script {
                 sh 'npm install node-telegram-bot-api'
                 sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.resutat_msg}' '${env.chatId}'"
             }
-        }   
+        }
     }
 }
