@@ -5,7 +5,9 @@ pipeline {
     }
     environment {
         BOT_TOKEN = credentials('BotToken')
-    // GITHUB_TOKEN = credentials('Id_github')
+        VERCEL_ORG_ID = credendials('ORG_ID_VERCEL')
+        VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
+        VERCEL_TOKEN = credentials('TOKEN_VERCEL')
     }
     parameters {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
@@ -66,6 +68,19 @@ pipeline {
                     script {
                         sh "node ./jenkinsScripts/indexPushChanges.js '${params.executor}' '${params.motiu}'"
                     }
+                }
+            }
+        }
+
+        stage('Deploy to Vercel'){
+            when{
+                expression {
+                    expression { currentBuild.result == 'SUCCESS' || currentBuild.result == null }
+                }
+            }
+            steps {
+                script {
+                    sh "node ./jenkinsScripts/indexDeployVercel.js"
                 }
             }
         }
