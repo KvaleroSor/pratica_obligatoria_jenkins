@@ -43,8 +43,6 @@ async function main() {
         console.error(`Error al intentar pujar els canvis: ${error}`);
         process.exit(1);
     }
-
-    //COmentari de proba
 }
 
 main();
