@@ -30,7 +30,7 @@ async function main() {
         console.log('Config Email:', configEmail.stdout, configEmail.stderr);
 
         console.log('Afegint canvis...');
-        const addChanges = await runCommand('git add README.md');
+        const addChanges = await runCommand('git add .');
         console.log('Add Changes:', addChanges.stdout, addChanges.stderr);
 
         console.log('Verificant estat de git abans del commit:');
