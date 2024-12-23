@@ -2,10 +2,10 @@ const handler = require('../pages/api/users/index.js').default;
 const { usersRepo } = require('../helpers/users-repo');
 const { createRequest, createResponse } = require('node-mocks-http');
 
-jest.mock('../helpers/users-repo'); // Asegúrate de que la ruta es correcta
+jest.mock('../helpers/users-repo');
 
 // Test for GET method
-test('GET / should return all users', () => {
+test('GET', () => {
     const req = createRequest({ method: 'GET' });
     const res = createResponse();
     const users = [
@@ -22,7 +22,7 @@ test('GET / should return all users', () => {
 });
 
 // Test for POST method
-test('POST / should create a new user', () => {
+test('POST', () => {
     const req = createRequest({ method: 'POST', body: { name: 'John Doe', email: 'john@example.com' } });
     const res = createResponse();
 
@@ -33,7 +33,7 @@ test('POST / should create a new user', () => {
 });
 
 // Test for DELETE method
-test('DELETE / should delete all users', () => {
+test('DELETE', () => {
     const req = createRequest({ method: 'DELETE' });
     const res = createResponse();
 
