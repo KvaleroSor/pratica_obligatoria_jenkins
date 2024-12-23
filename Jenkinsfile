@@ -8,10 +8,10 @@ pipeline {
         VERCEL_ORG_ID = credentials('ORG_ID_VERCEL')
         VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
-        RESULT_LINTER = '';
-        RESULT_TEST_JEST = '';
-        RESULT_UPDATE_README = '';
-        RESULT_DEPLOY = '';
+        RESULT_LINTER = ''
+        RESULT_TEST_JEST = ''
+        RESULT_UPDATE_README = ''
+        RESULT_DEPLOY = ''
     }
     parameters {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
@@ -46,7 +46,7 @@ pipeline {
                 //Executant linter
                 script {
                     env.RESULT_LINTER = sh(script: 'npm run lint', returnStatus: true)
-                    sh "node ./jenkinsScripts/indexLinter.js '${env.result_linter}'"
+                    sh "node ./jenkinsScripts/indexLinter.js '${env.RESULT_LINTER}'"
                 }
             }
         }
@@ -67,7 +67,7 @@ pipeline {
 
         stage('Update Readme') {
             steps {
-                env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js", returnStatus: true) 
+                env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStatus: true) 
             }
         }
 
