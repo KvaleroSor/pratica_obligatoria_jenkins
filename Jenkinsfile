@@ -5,6 +5,7 @@ pipeline {
     }
     environment {
         BOT_TOKEN = credentials('BotToken')
+    // GITHUB_TOKEN = credentials('Id_github')
     }
     parameters {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
@@ -59,10 +60,12 @@ pipeline {
             }
         }
 
-        stage('Push Changes'){
-            steps{
-                script{
-                    sh "node ./jenkinsScripts/indexPushChanges.js '${params.executor}' '${params.motiu}'"
+        stage('Push Changes') {
+            steps {
+                withCredentials([string(credentialsId: 'Id_github', usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_PASSWORD')]) {
+                    script {
+                        sh "node ./jenkinsScripts/indexPushChanges.js '${params.executor}' '${params.motiu}' '${GITHUB_TOKEN}'"
+                    }
                 }
             }
         }

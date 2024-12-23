@@ -15,10 +15,13 @@ async function runCommand(command) {
 async function main() {
     const executor = process.argv[2];
     const motiu = process.argv[3];
+    const githubUser = process.env.GITHUB_USER;
+    const githubPassword = process.env.GITHUB_PASSWORD;
 
     const commitMsg = `Pipeline executada per ${executor}. Motiu: ${motiu}`;
     const gitUsername = 'KvaleroSor';
     const gitUserEmail = 'kvalerosor@hotmail.com';
+    
 
     try {
         console.log('Configurant git');
@@ -32,6 +35,7 @@ async function main() {
         await runCommand(`git commit -m "${commitMsg}"`);
 
         console.log('Fent push dels canvis...');
+        await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
         await runCommand('git push origin HEAD:ci_jenkins');
         
         console.log('Canvis afegits correctament.');
