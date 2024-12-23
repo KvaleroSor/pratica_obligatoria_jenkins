@@ -31,20 +31,22 @@ async function main() {
         await runCommand('git add .');
 
         console.log('Verificant estat de git abans del commit:');
-        const statusBefore = await runCommand('git status');
+        const {stdout: statusBefore} = await runCommand('git status');
 
-        console.log(statusBefore);
-
-        console.log('Fent commit dels canvis...');
-        await runCommand(`git commit -m "${commitMsg}"`);
-
-        console.log('Verificant estat de git després del commit:');
-        await runCommand('git status');
-
-        console.log('Fent push dels canvis...');
-        await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
-        await runCommand('git push origin HEAD:ci_jenkins');
-        
+        if(!statusBefore.includes('nothing to commit, working tree clean')) {
+            console.log('Fent commit dels canvis...');
+            await runCommand(`git commit -m "${commitMsg}"`);
+    
+            console.log('Verificant estat de git després del commit:');
+            await runCommand('git status');
+    
+            console.log('Fent push dels canvis...');
+            await runCommand(`git remote set-url origin https://${githubUser}:${githubPassword}@github.com/KvaleroSor/pratica_obligatoria_jenkins.git`);
+            await runCommand('git push origin HEAD:ci_jenkins');
+        }else{
+            console.log('No hi ha canvis per fer commit.');
+        }
+    
         console.log('Canvis afegits correctament.');
     } catch (error) {
         console.error('Error al intentar pujar els canvis:');
