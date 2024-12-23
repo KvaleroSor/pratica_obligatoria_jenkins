@@ -5,7 +5,8 @@ const LINTER_RESULT = process.env.RESULT_LINTER;
 const TEST_RESULT = process.env.RESULT_TEST;
 const UPDATE_README_RESULT = process.env.RESULT_UPDATE_README;
 const DEPLOY_RESULT = process.env.RESULT_DEPLOY;
-const bot = new TelegramBot(botToken, {polling: true});
+
+const bot = new TelegramBot(TOKEN_BOT_TELEGRAM, {polling: true});
 
 // console.log(chatId + botToken + msg);
 

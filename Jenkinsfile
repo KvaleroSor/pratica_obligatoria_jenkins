@@ -67,7 +67,7 @@ pipeline {
 
         stage('Update Readme') {
             steps {
-                env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.result_tests}'", returnStatus: true) 
+                env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js", returnStatus: true) 
             }
         }
 
