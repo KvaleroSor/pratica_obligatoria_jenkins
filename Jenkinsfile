@@ -40,7 +40,7 @@ pipeline {
 
                 //Executant linter
                 script {
-                    RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true)
+                    env.RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true)
                     echo "Resultat linter -> '${RESULT_LINTER}'"                    
                     sh "node ./jenkinsScripts/indexLinter.js '${RESULT_LINTER}'" 
                 }
@@ -50,7 +50,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    RESULT_TEST_JEST = sh(script: 'npm run test', returnStdout: true)
+                    env.RESULT_TEST_JEST = sh(script: 'npm run test', returnStdout: true)
                 }
             }
         }
@@ -64,7 +64,7 @@ pipeline {
         stage('Update Readme') {
             steps {
                 script {
-                    RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStdout: true)
+                    env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStdout: true)
                 }
             }
         }
@@ -87,7 +87,7 @@ pipeline {
             }
             steps {
                 script {
-                    RESULT_DEPLOY = sh(script: 'node ./jenkinsScripts/indexDeployVercel.js', returnStdout: true)
+                    env.RESULT_DEPLOY = sh(script: 'node ./jenkinsScripts/indexDeployVercel.js', returnStdout: true)
                 }
             }
         }
