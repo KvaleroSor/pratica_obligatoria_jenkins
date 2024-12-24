@@ -33,16 +33,34 @@ pipeline {
             }
         }
 
+        // stage('Executant linter') {
+        //     steps {
+        //         //Instal·lant dependències
+        //         sh 'npm install'
+
+        //         //Executant linter
+        //         script {
+        //             RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true)
+        //             echo "Resultat linter -> '${RESULT_LINTER}'"                    
+        //             sh "node ./jenkinsScripts/indexLinter.js '${RESULT_LINTER}'" 
+        //         }
+        //     }
+        // }
+
         stage('Executant linter') {
             steps {
-                //Instal·lant dependències
+                // Instal·lant dependències
                 sh 'npm install'
 
-                //Executant linter
+                // Executant linter
                 script {
-                    RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true)
-                    echo "Resultat linter -> '${RESULT_LINTER}'"                    
-                    sh "node ./jenkinsScripts/indexLinter.js '${RESULT_LINTER}'" 
+                    def lintOutput = sh(script: 'npm run lint', returnStdout: true).trim()
+                    def lintStatus = sh(script: 'npm run lint', returnStatus: true)
+                    env.RESULT_LINTER = lintOutput
+                    env.LINT_STATUS = lintStatus.toString()
+                    echo "Resultat linter -> '${env.RESULT_LINTER}'"
+                    echo "Lint status -> '${env.LINT_STATUS}'"
+                    sh "node ./jenkinsScripts/indexLinter.js '${env.RESULT_LINTER}' '${env.LINT_STATUS}'"
                 }
             }
         }
