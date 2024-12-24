@@ -9,6 +9,7 @@ pipeline {
         VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
         RESULT_LINTER = ''
+        LINT_STATUS = ''
         RESULT_TEST_JEST = ''
         RESULT_UPDATE_README = ''
         RESULT_DEPLOY = ''
@@ -114,7 +115,7 @@ pipeline {
         always {
             script {
                 sh 'npm install node-telegram-bot-api'
-                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.RESULT_LINTER}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
+                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.LINT_STATUS}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
             }
         }
     }
