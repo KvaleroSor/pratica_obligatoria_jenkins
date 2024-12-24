@@ -70,7 +70,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    env.RESULT_TEST_JEST = sh(script: 'npm run test', returnStdout: true)
+                    env.RESULT_TEST_JEST = sh(script: 'npm run test', returnStatus: true)
                 }
             }
         }
@@ -84,7 +84,7 @@ pipeline {
         stage('Update Readme') {
             steps {
                 script {
-                    env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStdout: true)
+                    env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStatus: true)
                 }
             }
         }
@@ -107,7 +107,7 @@ pipeline {
             }
             steps {
                 script {
-                    env.RESULT_DEPLOY = sh(script: 'node ./jenkinsScripts/indexDeployVercel.js', returnStdout: true)
+                    env.RESULT_DEPLOY = sh(script: 'node ./jenkinsScripts/indexDeployVercel.js', returnStatus: true)
                 }
             }
         }
