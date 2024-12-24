@@ -2,10 +2,12 @@ const fs = require('fs').promises;
 
 async function main() {
     try {        
-        console.log('Starting the script...');
+        // console.log('Starting the script...');
         // console.log('Mostrem el directori actual de treball:', process.cwd());
 
         const resultat_test = process.env.RESULT_TEST_JEST;
+        console.log('Resultat dels tests ->', resultat_test);
+        
         const img_error = 'https://img.shields.io/badge/test-failure-red';
         const img_exit = 'https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg';
         const badge = resultat_test === '0' ? img_exit : img_error;
