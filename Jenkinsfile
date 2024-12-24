@@ -40,7 +40,7 @@ pipeline {
 
                 //Executant linter
                 script {
-                    RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true)                                    
+                    RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true).trim()                                    
                     echo "Resultat linter -> '${RESULT_LINTER}'"                    
                     sh "node ./jenkinsScripts/indexLinter.js '${RESULT_LINTER}'" 
                 }
