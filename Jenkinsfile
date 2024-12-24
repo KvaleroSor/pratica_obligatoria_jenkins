@@ -9,7 +9,7 @@ pipeline {
         VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
         RESULT_LINTER = ''
-        LINT_STATUS = ''
+        // LINT_STATUS = ''
         RESULT_TEST_JEST = ''
         RESULT_UPDATE_README = ''
         RESULT_DEPLOY = ''
