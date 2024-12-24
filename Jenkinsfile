@@ -11,9 +11,9 @@ pipeline {
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
         // RESULT_LINTER = ''
         // LINT_STATUS = ''
-        RESULT_TEST_JEST = ''
-        RESULT_UPDATE_README = ''
-        RESULT_DEPLOY = ''
+        // RESULT_TEST_JEST = ''
+        // RESULT_UPDATE_README = ''
+        // RESULT_DEPLOY = ''
     }
     parameters {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
@@ -70,7 +70,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    RESULT_TEST_JEST = sh(script: 'npm run test', returnStdout: true)
+                    env.RESULT_TEST_JEST = sh(script: 'npm run test', returnStdout: true)
                 }
             }
         }
@@ -84,7 +84,7 @@ pipeline {
         stage('Update Readme') {
             steps {
                 script {
-                    RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStdout: true)
+                    env.RESULT_UPDATE_README = sh(script: "node ./jenkinsScripts/indexUpdateReadme.js '${env.RESULT_UPDATE_README}'", returnStdout: true)
                 }
             }
         }
@@ -107,7 +107,7 @@ pipeline {
             }
             steps {
                 script {
-                    RESULT_DEPLOY = sh(script: 'node ./jenkinsScripts/indexDeployVercel.js', returnStdout: true)
+                    env.RESULT_DEPLOY = sh(script: 'node ./jenkinsScripts/indexDeployVercel.js', returnStdout: true)
                 }
             }
         }
