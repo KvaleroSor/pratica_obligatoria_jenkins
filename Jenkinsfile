@@ -3,12 +3,13 @@ pipeline {
     tools {
         nodejs 'Node Js'
     }
+    //Si declarem les variables en l´apartat de environment, maxaca el valor de retorn i els dona el valor null
     environment {
         BOT_TOKEN = credentials('BotToken')
         VERCEL_ORG_ID = credentials('ORG_ID_VERCEL')
         VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
-        RESULT_LINTER = ''
+        // RESULT_LINTER = ''
         // LINT_STATUS = ''
         RESULT_TEST_JEST = ''
         RESULT_UPDATE_README = ''
@@ -61,7 +62,7 @@ pipeline {
                     env.LINT_STATUS = lintStatus.toString()
                     echo "Resultat linter -> '${env.RESULT_LINTER}'"
                     echo "Lint status -> '${env.LINT_STATUS}'"
-                    sh "node ./jenkinsScripts/indexLinter.js '${env.LINT_STATUS}'"
+                    sh "node ./jenkinsScripts/indexLinter.js '${env.LINT_STATUS}' '${env.RESULT_LINTER}'"
                 }
             }
         }
