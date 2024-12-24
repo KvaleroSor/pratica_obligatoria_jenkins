@@ -1,4 +1,4 @@
-const result = process.argv[3];
+const result = process.argv[2];
 
 console.log('Result en l´arxiu indexLinter -> ' + result);
 

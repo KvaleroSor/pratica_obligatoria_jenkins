@@ -61,7 +61,7 @@ pipeline {
                     env.LINT_STATUS = lintStatus.toString()
                     echo "Resultat linter -> '${env.RESULT_LINTER}'"
                     echo "Lint status -> '${env.LINT_STATUS}'"
-                    sh "node ./jenkinsScripts/indexLinter.js '${env.RESULT_LINTER}' '${env.LINT_STATUS}'"
+                    sh "node ./jenkinsScripts/indexLinter.js '${env.LINT_STATUS}'"
                 }
             }
         }
