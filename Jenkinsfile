@@ -96,7 +96,7 @@ pipeline {
         always {
             script {
                 sh 'npm install node-telegram-bot-api'
-                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}'"
+                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.RESULT_LINTER}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
             }
         }
     }
