@@ -40,7 +40,8 @@ pipeline {
 
                 //Executant linter
                 script {
-                    env.RESULT_LINTER = sh(script: 'npm run lint', returnStatus: true)
+                    env.result_linter = sh(script: 'npm run lint', returnStatus: true)
+                    env.RESULT_LINTER = env.result_linter.toString()
                     echo "Resultat linter -> '${RESULT_LINTER}'"
                     sh "node ./jenkinsScripts/indexLinter.js '${env.RESULT_LINTER}'"
                 }
