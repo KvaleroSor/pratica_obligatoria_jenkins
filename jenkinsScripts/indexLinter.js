@@ -1,5 +1,6 @@
-// const result = process.argv[2];
-const result = process.env.RESULT_LINTER;
+const result = process.argv[2];
+// const result = process.env.RESULT_LINTER;
+
 
 console.log(result);
 
