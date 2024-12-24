@@ -1,6 +1,6 @@
 const result = process.argv[2];
 
-console.log(result);
+console.log('Result en l´arxiu indexLinter -> ' + result);
 
 console.log('Resultat -> ' + result);
 if (result.includes('No ESLint warnings or errors')) {
