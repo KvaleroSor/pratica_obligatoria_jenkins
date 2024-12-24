@@ -8,10 +8,10 @@ pipeline {
         VERCEL_ORG_ID = credentials('ORG_ID_VERCEL')
         VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
-        // RESULT_LINTER = ''
-        // RESULT_TEST_JEST = ''
-        // RESULT_UPDATE_README = ''
-        // RESULT_DEPLOY = ''
+        RESULT_LINTER = ''
+        RESULT_TEST_JEST = ''
+        RESULT_UPDATE_README = ''
+        RESULT_DEPLOY = ''
     }
     parameters {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
