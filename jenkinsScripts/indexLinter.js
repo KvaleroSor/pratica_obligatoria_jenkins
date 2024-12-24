@@ -1,12 +1,11 @@
 const result = process.argv[2];
-// const result = process.env.RESULT_LINTER;
-
 
 console.log(result);
 
 console.log('Resultat -> ' + result);
-if(result !== '0'){
+if (result.includes('No ESLint warnings or errors')) {
+    console.log('Linter no ha encontrado ningún error... ✅');
+} else {
     console.log('Linter ha encontrado errores... ❌');
-}else if(result === '0'){
-    console.log('Linter no ha enctronado ningún error... ✅');
+    process.exit(1);
 }
