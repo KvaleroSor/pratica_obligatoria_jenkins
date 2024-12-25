@@ -23,7 +23,7 @@ test('GET', () => {
 
 // Test per al mètode POST
 test('POST', () => {
-    const req = createRequest({ method: 'POST0', body: { name: 'John Doe', email: 'john@example.com' } });
+    const req = createRequest({ method: 'POST', body: { name: 'John Doe', email: 'john@example.com' } });
     const res = createResponse();
 
     handler(req, res);
