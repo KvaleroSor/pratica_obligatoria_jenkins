@@ -333,25 +333,39 @@ gestionarem eixes dades de la següent forma.
 
 - Script que gestiona el missatge de telegram.
 
-![Notificacio stage 1](./img/46-%20script%20telegram.png)
+![Notificació stage 1](./img/46-%20script%20telegram.png)
 
 En aquest script gestionem les variables d´entorn i la funció que s´encarrega d´enviar el missatge al nostre bot.
 
 Hem afegit les "ternaries" per tal de mostrar un missatge més clar al usuari en el missatge de telegram.
 
+- Imatge de l´stage | post de telegram al jenkinsfile.
 
+    - En aquesta imatge pugem veure que hi han dos definicions d´un stage i d´un post. La que està descomentada és la del post, personalment m´agrada més perquè s´executa sempre gràcies al element "always", independenment dels resultats de les altres stages i ens pot donar un bon feedback per notificació al telegram de com ha anat la nostra "Pipeline".
 
-- Resultats de retorno dels comandos.
+    - Per altra banda l´stage s´executaria si la resta ha funcionat correctament, sino no s´executaria.
+
+![Notificació stage 2](./img/47-%20stage-post%20notificacio.png)
+
+- Resultats del missatge de telegram amb l´informació dels stages.
 
     - 0 - S´ha executat l´stage de manera exitosa.
-
         - "Identificador de l´stage" s´ha executat exitosament - ✅
 
     - 1 - S´ha executat l´stage però no de manera exitosa.
-
         - "Identificador de l´stage" ha trovat errors - ❌ | ha fallat - ❌
 
 - Imatge del resultat d´un missatge a telegram amb errates.
+
+    - Es veuen dos missatges junts desprès del nom "TelegramKikeValero" perquè hi havia poc temps entre les dos execucions
+    el fet d´adjuntar els dos missatges en una captura era per poder traure el nom anomenat anteriorment.
+
+![Notificació stage 4](./img/49-%20missatge%20telegram%20error.png)
+
+- Imatge del resultat d´un missatge a telegram sense errates.
+
+![Notificació stage 5](./img/48-%20missatge%20telegram%20correcte.png)
+
 
 
 
