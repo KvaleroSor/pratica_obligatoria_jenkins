@@ -47,7 +47,7 @@ async function main() {
             console.log('No hi ha canvis per fer commit.');
         }
     
-        console.log('Canvis afegits correctament.');
+        console.log('Canvis afegits correctament - ✅');
     } catch (error) {
         console.error('Error al intentar pujar els canvis:');
         if (error.stderr) {

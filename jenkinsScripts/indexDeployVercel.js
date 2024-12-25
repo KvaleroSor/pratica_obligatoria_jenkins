@@ -14,8 +14,8 @@ function runCommand(command) {
 
 async function deployToVercel() {
     const vercelToken = process.env.VERCEL_TOKEN;
-    const vercelOrgId = process.env.VERCEL_ORG_ID;
-    const vercelProjectId = process.env.VERCEL_PROJECT_ID;
+    // const vercelOrgId = process.env.VERCEL_ORG_ID;
+    // const vercelProjectId = process.env.VERCEL_PROJECT_ID;
 
     try {
         console.log("Desplegant el projecte a Vercel...");
