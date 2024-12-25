@@ -123,6 +123,16 @@ Una vegada instal·lat el plugin el podrem veure disponible a l´apartat "Instal
 Situats al nostre panel de control veurem a la part superior un simbol de "+" per poder afegir noves vistes. Crearem una nova vista utilitzant el 
 plugin "Build Monitor View". 
 
+![Instal·lar plugin pas 4](./img/30-%20instalar%20plugins%20pas%204.png)
+
+![Instal·lar plugin pas 5](./img/5-%20configurant%20blue%20monitor.png)
+
+--- 
+
+El resultat de la vista utilitzant el plugin instal·lat serà el següent.
+
+![Instal·lar plugin pas 6](./img/7-%20resultat%20blue%20monitor.png)
+
 ### Creació pràctica Jenkins.
 
 Per a la creació de la nostra pràctica hem agafat el còdig d´una pràctica anterior que es basava en React. Per tal de treballar sense que 
