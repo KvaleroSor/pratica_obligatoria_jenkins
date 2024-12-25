@@ -169,6 +169,28 @@ I el resultat una vegada haja corregut la nostra "Pipeline" serà la següent.
 
 ![Petició de dades 4](./img/10-%20executant%20peticio%20de%20dades.png)
 
+--- 
+
+#### Pas 2 - Linter Stage.
+
+El linter s´encarregarà de revisar el nostre còdig per a que es complixquen una serie de regles, per tal de que tot el còdig
+seguixca el mateix patrò, ens ajuda per estandaritzar.
+
+Imagte del stage de linter.
+
+![Linter stage 1](./img/34-%20stage%20linter.png)
+
+En cas de que el nostre linter correga i hi hagen regles al nostre còdig que no estan complint-se el resultat serà el següent.
+
+![Linter stage 2](./img/12-%20linter%20encontrant%20errors.png)
+
+Una vegada corregim els errors, podem veure que linter ens facilita l´informació d´on estan situats eixos errors, els corregim i 
+el resultat deuria de ser el següent.
+
+![Linter stage 3](./img/13-%20corrent%20linter%20sense%20errates.png)
+
+Podem veure que el proces finalitza de manera exitosa per a nosaltres.
+
 
 
 
