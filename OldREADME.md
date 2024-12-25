@@ -355,13 +355,8 @@ Hem afegit les "ternaries" per tal de mostrar un missatge més clar al usuari en
 
 - Imatge del resultat d´un missatge a telegram amb errates.
 
-    - En aquesta imatge no es veu el nom de "TelegramKikeValero" perquè al enviar varios missatges seguits sense apenes deixar
-    temps entre ells encadenava els missatges i no apareixia el nom indicat anteriorment.
-
-![Notificació stage 3](./img/22-%20missatge%20al%20telegram%20mostrar%20la%20errata.png)
-
-- Imatge per verificar que al enviar varios missatges seguits no ixia el nom de "TelegramKikeValero".
-    - Es veuen dos missatges junts desprès del nom anomenat anteriorment.
+    - Es veuen dos missatges junts desprès del nom "TelegramKikeValero" perquè hi havia poc temps entre les dos execucions
+    el fet d´adjuntar els dos missatges en una captura era per poder traure el nom anomenat anteriorment.
 
 ![Notificació stage 4](./img/49-%20missatge%20telegram%20error.png)
 
