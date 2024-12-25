@@ -225,7 +225,19 @@ Resultat dels tests sense errates.
 
 ![Test stage 4](./img/14-%20corrent%20jest%20test%20sense%20errates.png)
 
+---
 
+#### Pas 4 - Build Stage.
+
+Aquest stage s´encarregara de crear una versió empaquetada del nostre projecte per posteriorment desplegarlo a la plataforma Vercel.
+
+Imatge de l´stage.
+
+![Build Stage 1](./img/38-%20stage%20build%20.png)
+
+Imatge del resultat una vegada executada la "Pipeline".
+
+![Build Stage 2](./img/16-%20corrent%20npm%20build%20per%20a%20desplegue.png)
 
 
 
