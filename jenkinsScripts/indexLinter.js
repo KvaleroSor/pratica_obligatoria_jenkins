@@ -1,9 +1,8 @@
 const result_linter = process.argv[2];
 
-console.log('Result en l´arxiu stdout -> ' + result);
+console.log('Result en l´arxiu stdout -> ' + result_linter);
 
-console.log('Resultat -> ' + result);
-if (result.toString() == '0') {
+if (result_linter.toString() == '0') {
     console.log('Linter no ha encontrado ningún error... ✅');
     return 'Linter no ha encontrado ningún error... ✅';
 } else {
