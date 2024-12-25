@@ -1,6 +1,5 @@
 RESULTAT DELS ÚLTIMS TESTS 
  ![Test result badge](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)
-User -> Kike Valero - Modificacions OldREADME
 # PRÀCTICA JENKINS
 
 ## Qué es Jenkins?
