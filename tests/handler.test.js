@@ -4,7 +4,7 @@ const { createRequest, createResponse } = require('node-mocks-http');
 
 jest.mock('../helpers/users-repo');
 
-// Test for GET method
+// Test per al mètode GET
 test('GET', () => {
     const req = createRequest({ method: 'GET' });
     const res = createResponse();
@@ -21,9 +21,9 @@ test('GET', () => {
     expect(res._getJSONData()).toEqual(users);
 });
 
-// Test for POST method
+// Test per al mètode POST
 test('POST', () => {
-    const req = createRequest({ method: 'POST', body: { name: 'John Doe', email: 'john@example.com' } });
+    const req = createRequest({ method: 'POST0', body: { name: 'John Doe', email: 'john@example.com' } });
     const res = createResponse();
 
     handler(req, res);
@@ -32,7 +32,7 @@ test('POST', () => {
     expect(res._getJSONData()).toEqual({ greeting: 'Hello John Doe' });
 });
 
-// Test for DELETE method
+// Test per al mètode DELETE
 test('DELETE', () => {
     const req = createRequest({ method: 'DELETE' });
     const res = createResponse();
