@@ -34,6 +34,8 @@ a millorar la qualitat del nostre software.
 Primer que tot accedint al nostre "localhost:8080" si així ho tinguem mapejat al "docker-compose.yml" ens trobarem amb la pantalla principal
 de Jenkins.
 
+![Pantalla principal jenkins](./img/25-%20pantalla%20principal%20jenkins.png)
+
 
 
 
