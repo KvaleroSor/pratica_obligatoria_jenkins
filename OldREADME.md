@@ -1,4 +1,3 @@
-User -> Kike Valero - Modificacions OldREADME
 # PRÀCTICA JENKINS
 
 ## Qué es Jenkins?
