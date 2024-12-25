@@ -191,6 +191,12 @@ el resultat deuria de ser el següent.
 
 Podem veure que el proces finalitza de manera exitosa per a nosaltres.
 
+Nosaltres hem afegit un "indexLinter.js" per gestionar el valor que linter retorna i mostrar a la nostra "Pipeline" d´una forma un poc
+més vistosa el resultat de linter.
+
+![Linter stage 4](./img/35-%20stage%20linter%20.png)
+
+
 
 
 
