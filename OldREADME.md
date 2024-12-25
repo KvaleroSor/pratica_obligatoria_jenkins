@@ -140,6 +140,8 @@ El resultat de la vista utilitzant el plugin instal·lat serà el següent.
 
 ![Instal·lar plugin pas 6](./img/7-%20resultat%20blue%20monitor.png)
 
+---
+
 ### Creació pràctica Jenkins.
 
 Per a la creació de la nostra pràctica hem agafat el còdig d´una pràctica anterior que es basava en React. Per tal de treballar sense que 
@@ -149,9 +151,6 @@ les nostres modificacions afecten al còdig de la branca principal, creem la bra
 
 ---
 
-Una vegada tinguem el còdig disponible a la nova branca i la Pipeline creada com hem mostrat en un dels punts anteriors, proseguirem construint
-el nostre "Jenkinsfile" amb els corresponents scripts necessaris per a 
-
 #### Pas 1 - Petició de dades.
 
 Per a poder treballar amb petició de dades al nostre "Jenkinsfile" hauren d´utillitzar el següent element.
@@ -160,15 +159,15 @@ Per a poder treballar amb petició de dades al nostre "Jenkinsfile" hauren d´ut
 
 També haurem d´afegir un stage que gestione les dades que volem introduir per paràmetres.
 
-![]
+![Petició de dades 2](./img/33-%20stage%20peticio%20de%20dades.png)
 
 En el moment creem aquest apartat en el nostre "Jenkinsfile" quan executem la nostra "Pipeline" ens apareixerà de la següent forma.
 
-![Peticíó de dades 2](./img/11-%20executant%20peticio%20de%20dades.png)
+![Peticíó de dades 3](./img/11-%20executant%20peticio%20de%20dades.png)
 
 I el resultat una vegada haja corregut la nostra "Pipeline" serà la següent.
 
-![Petició de dades 3](./img/10-%20executant%20peticio%20de%20dades.png)
+![Petició de dades 4](./img/10-%20executant%20peticio%20de%20dades.png)
 
 
 
