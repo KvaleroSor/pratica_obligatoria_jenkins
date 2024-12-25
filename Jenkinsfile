@@ -56,7 +56,8 @@ pipeline {
 
                 // Executant linter
                 script {
-                    env.RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true).trim()
+                    // env.RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true).trim()
+                    env.RESULT_LINTER = sh(script: 'npm run lint', returnStatus: true)
                     // def lintStatus = sh(script: 'npm run lint', returnStatus: true)
                     // env.RESULT_LINTER = lintOutput
                     // env.LINT_STATUS = lintStatus.toString()
