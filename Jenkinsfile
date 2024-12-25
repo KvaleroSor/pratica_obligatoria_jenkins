@@ -9,11 +9,6 @@ pipeline {
         VERCEL_ORG_ID = credentials('ORG_ID_VERCEL')
         VERCEL_PROJECT_ID = credentials('PROJECT_ID_VERCEL')
         VERCEL_TOKEN = credentials('TOKEN_VERCEL')
-        // RESULT_LINTER = ''
-        // LINT_STATUS = ''
-        // RESULT_TEST_JEST = ''
-        // RESULT_UPDATE_README = ''
-        // RESULT_DEPLOY = ''
     }
     parameters {
         string(name: 'executor', defaultValue: 'Kike Valero', description: 'Executor de la tasca')
@@ -35,34 +30,14 @@ pipeline {
             }
         }
 
-        // stage('Executant linter') {
-        //     steps {
-        //         //Instal·lant dependències
-        //         sh 'npm install'
-
-        //         //Executant linter
-        //         script {
-        //             RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true)
-        //             echo "Resultat linter -> '${RESULT_LINTER}'"                    
-        //             sh "node ./jenkinsScripts/indexLinter.js '${RESULT_LINTER}'" 
-        //         }
-        //     }
-        // }
-
         stage('Executant linter') {
             steps {
                 // Instal·lant dependències
                 sh 'npm install'
 
                 // Executant linter
-                script {
-                    // env.RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true).trim()
-                    env.RESULT_LINTER = sh(script: 'npm run lint', returnStatus: true)
-                    // def lintStatus = sh(script: 'npm run lint', returnStatus: true)
-                    // env.RESULT_LINTER = lintOutput
-                    // env.LINT_STATUS = lintStatus.toString()
-                    // echo "Resultat linter -> '${env.RESULT_LINTER}'"
-                    // echo "Lint status -> '${env.LINT_STATUS}'"
+                script {                    
+                    env.RESULT_LINTER = sh(script: 'npm run lint', returnStatus: true)                    
                     sh "node ./jenkinsScripts/indexLinter.js '${env.RESULT_LINTER}'"
                 }
             }
