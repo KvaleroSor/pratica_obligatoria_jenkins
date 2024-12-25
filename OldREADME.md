@@ -1,3 +1,4 @@
+User -> Kike Valero - Modificacions OldREADME
 # PRÀCTICA JENKINS
 
 ## Qué es Jenkins?
@@ -34,11 +35,15 @@ Està basat en una arquitectura "Mestre" - "Esclau".
 Primer que tot accedint al nostre "localhost:8080" si així ho tinguem mapejat al "docker-compose.yml" ens trobarem amb la pantalla principal
 de Jenkins.
 
+#### Creació nova tasca.
+
 ![Pantalla principal jenkins](./img/25-%20pantalla%20principal%20jenkins.png)
 
 Veurem seleccionat amb un quadre blanc que puguem afegir una "Nueva Tarea". 
 
 ---
+
+#### Nom de la tasca i selecció de Pipeline.
 
 Una vegada ho fem ens trobarem amb la següent pantalla.
 
@@ -67,6 +72,22 @@ Una vegada configurats els paràmetres, donarem pas a la següent configuració,
 
 Els dos punts que marquem com a importants els tinguem resaltats amb un recuadre blanc.
 
-----
+---
+
+- MOLT IMPORTANT!
+
+    - L´us de credencials. Com he pogut veure a l´imatge anterior per poder conectar-se al repositori remot hem fet us de "Credentials". 
+    Aquestes credencials hauran sigut creades previament al nostre Jenkins per tal de fer us d´elles en el moment ho necessitem.
+
+1. Representa la credencial que hem utilitzat per conectar-se al nostre repo remot.
+
+![Credencial github](./img/26-%20credencial%20github.png)
+
+2. Representa la resta de credencials que hem necessitat per poder executar correctament els nostres Stages.
+
+![Credencials projecte](./img/24-%20variables%20sensibles%20guardades%20com%20a%20credencials.png)
+
+
+
 
 
