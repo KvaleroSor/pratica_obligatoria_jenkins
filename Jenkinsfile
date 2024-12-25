@@ -3,7 +3,7 @@ pipeline {
     tools {
         nodejs 'Node Js'
     }
-    //Si declarem les variables en l´apartat de environment, maxaca el valor de retorn i els dona el valor null
+ 
     environment {
         BOT_TOKEN = credentials('BotToken')
         VERCEL_ORG_ID = credentials('ORG_ID_VERCEL')

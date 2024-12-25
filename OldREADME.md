@@ -91,6 +91,13 @@ Els dos punts que marquem com a importants els tinguem resaltats amb un recuadre
 
 ![Credencials projecte](./img/24-%20variables%20sensibles%20guardades%20com%20a%20credencials.png)
 
+- A aquestes variables accedirem desde el jenkins file de la següent manera.
+
+![Acces a variables d´entorn](./img/31-%20acces%20a%20variables%20dentorn.png)
+
+Desde l´arxiu "Jenkinsfile" accedirem a aquestes variables utilitzant l´element "Environment" i accedint a les variables que 
+tinguem com a credencials i que necessitarem per al projecte.
+
 --- 
 
 Seguint els següents passos dueriem de poder crear una Pipeline sense cap problema. 
@@ -139,6 +146,24 @@ Per a la creació de la nostra pràctica hem agafat el còdig d´una pràctica a
 les nostres modificacions afecten al còdig de la branca principal, creem la branca "ci_jenkins".
 
 ![Creació de la branca de treball](./img/1-%20creant%20branca%20ci_jenkins.png)
+
+---
+
+Una vegada tinguem el còdig disponible a la nova branca i la Pipeline creada com hem mostrat en un dels punts anteriors, proseguirem construint
+el nostre "Jenkinsfile" amb els corresponents scripts necessaris per a 
+
+#### Pas 1 - Petició de dades.
+
+Per a poder treballar amb petició de dades al nostre "Jenkinsfile" hauren d´utillitzar el següent element.
+
+![Petició de dades 1](./img/32-%20peticio%20de%20dades.png)
+
+En el moment creem aquest apartat en el nostre "Jenkinsfile" quan executem la nostra "Pipeline" ens apareixerà de la següent forma.
+
+!
+
+
+
 
 
 
