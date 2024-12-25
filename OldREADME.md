@@ -10,23 +10,23 @@ GitHub, Docker, Kubernetes, etc.
 
 Tasques de Jenkins: 
 
-    - Creació.
-    - Prova i lliurament.
-    - Implementació de programari.
+- Creació.
+- Prova i lliurament.
+- Implementació de programari.
 
 Jenkins també permet als desarrolladors detectar errors en etapes tempranes del cicle de desenvolupament, açò ens ajudarà 
 a millorar la qualitat del nostre software.
 
 Està basat en una arquitectura "Mestre" - "Esclau".
 
-    - Mestre: Es el encarregat de: 
+- Mestre: Es el encarregat de: 
 
-        - Programar treballs.
-        - Assignar esclaus.
-        - Enviar compilacions als seus esclaus.
-        - Recuperar la resposta dels resultats de compilació dels seus esclaus.
+    - Programar treballs.
+    - Assignar esclaus.
+    - Enviar compilacions als seus esclaus.
+    - Recuperar la resposta dels resultats de compilació dels seus esclaus.
     
-    - Esclau: Rep peticions d´un node mestre i executa els treballs de construcció que aquest li envia.
+- Esclau: Rep peticions d´un node mestre i executa els treballs de construcció que aquest li envia.
 
 ---
 
