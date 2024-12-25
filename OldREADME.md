@@ -38,11 +38,15 @@ de Jenkins.
 
 Veurem seleccionat amb un quadre blanc que puguem afegir una "Nueva Tarea". 
 
+---
+
 Una vegada ho fem ens trobarem amb la següent pantalla.
 
 ![Pantalla creació pipeline](./img/3-%20creant%20pipeline.png)
 
 Assignarem un nom a la tasca i seleccionarem "Pipeline".
+
+---
 
 ![Configurant la nostar pipeline](./img/8-%20configurant%20pipeline.png)
 
@@ -50,17 +54,19 @@ En la nostra Pipeline com vullguem passar-li alguns paràmetres el que farem ser
 Depenguent dels paràmetres que nosaltres vullguem passar-li seleccionarem entre les diferents opcions que tinguem, nosaltres 
 seleccionarem l´opció "Parametros de cadena" (fa referencia a parametres d´entrada de cadena de text).
 
+---
+
 Una vegada configurats els paràmetres, donarem pas a la següent configuració, el repositori de GitHub amb el que anem a treballar.
 
 ![Configurant la nostra pipeline 2](./img/9-%20configurant%20pipeline.png)
 
 - IMPORTANT! 
 
- - Copiar de forma correcta el enllaç al repositori per evitar-se errades de conexió.
- - Afegir la branca amb la que vullguem treballar.
+    - Copiar de forma correcta el enllaç al repositori per evitar-se errades de conexió.
+    - Afegir la branca amb la que vullguem treballar.
 
 Els dos punts que marquem com a importants els tinguem resaltats amb un recuadre blanc.
 
-
+----
 
 
