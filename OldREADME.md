@@ -359,7 +359,7 @@ Hem afegit les "ternaries" per tal de mostrar un missatge més clar al usuari en
 
 - Imatge del resultat d´un missatge a telegram sense errates.
 
-![Notificació stage 4](./img/23-%20tot%20executat%20i%20corrent%20exitosament.png)
+![Notificació stage 4](./img/48-%20missatge%20telegram%20correcte.png)
 
 
 
