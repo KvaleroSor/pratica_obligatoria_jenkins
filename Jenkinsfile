@@ -53,8 +53,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm run build'
-                sh"echo 'Build s´ha executat correctament - ✅"
+                sh 'npm run build'               
             }
         }
 
