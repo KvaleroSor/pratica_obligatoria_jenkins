@@ -53,6 +53,8 @@ Assignarem un nom a la tasca i seleccionarem "Pipeline".
 
 ---
 
+#### Paràmetres.
+
 ![Configurant la nostar pipeline](./img/8-%20configurant%20pipeline.png)
 
 En la nostra Pipeline com vullguem passar-li alguns paràmetres el que farem serà dir-li que "Esta tarea debe parametrizarse".
@@ -60,6 +62,8 @@ Depenguent dels paràmetres que nosaltres vullguem passar-li seleccionarem entre
 seleccionarem l´opció "Parametros de cadena" (fa referencia a parametres d´entrada de cadena de text).
 
 ---
+
+#### Vinculació amb repositori de GitHub.
 
 Una vegada configurats els paràmetres, donarem pas a la següent configuració, el repositori de GitHub amb el que anem a treballar.
 
@@ -87,7 +91,9 @@ Els dos punts que marquem com a importants els tinguem resaltats amb un recuadre
 
 ![Credencials projecte](./img/24-%20variables%20sensibles%20guardades%20com%20a%20credencials.png)
 
+--- 
 
+Seguint els següents passos dueriem de poder crear una Pipeline sense cap problema. 
 
 
 
