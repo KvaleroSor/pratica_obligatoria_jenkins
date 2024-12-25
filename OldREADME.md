@@ -31,6 +31,9 @@ a millorar la qualitat del nostre software.
 
 ### Proces de creació de una Pipeline a Jenkins.
 
+Primer que tot accedint al nostre "localhost:8080" si així ho tinguem mapejat al "docker-compose.yml" ens trobarem amb la pantalla principal
+de Jenkins.
+
 
 
 
