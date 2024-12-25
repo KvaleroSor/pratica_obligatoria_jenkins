@@ -219,6 +219,14 @@ Arxiu .babelrc.
 
 ![Test stage 3](./img/37-%20stage%20test%20babel.png)
 
+Una vegada fetes totes les configuracions, executem la nostra "Pipeline".
+
+Resultat dels tests sense errates.
+
+![Test stage 4](./img/14-%20corrent%20jest%20test%20sense%20errates.png)
+
+
+
 
 
 
