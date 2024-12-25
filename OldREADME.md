@@ -316,9 +316,40 @@ al nostre Jenkins.
 - Nota.
 
     - En aquest stage puguem veure una particularitat, i es que ens trobem amb l´apartat "when/expression", açò fa referencia a que aquest stage s´esperarà a que l´últim stage davant dell s´execute, i s´assegurarà de que eixe mateix stage s´ha executat correctament, ja que qualsevol dels stages que vagen per davant si no s´executen com toca, el stage que està davant del "Deploy to vercel" no s´executarà.
-    
+
     En conclusió, es una forma de fer que aquest stage s´espere a la correcta execució dels stages que el precedixen.
 
+---
+
+#### Pas 8 - Notifiació Telegram.
+
+En aquest stage també trobem credencials mostrades anteriorment. Podrem veure que necessitem gastar un token de telegram per poder conectar-se al nostre bot, a més a més, 
+uns dels paràmetres d´entrada serà el identificador del chat/bot amb el que interactuarem, més en concret el paràmetre "chatId".
+
+Aquest s´executarà al post, una vegada s´hagen executat tots els stages, arrecollirem amb variables d´entorn els valors de retorno dels comandos i mitjantsan un script 
+gestionarem eixes dades de la següent forma.
+
+- Script que gestiona el missatge de telegram.
+
+![Notificacio stage 1](./img/46-%20script%20telegram.png)
+
+En aquest script gestionem les variables d´entorn i la funció que s´encarrega d´enviar el missatge al nostre bot.
+
+Hem afegit les "ternaries" per tal de mostrar un missatge més clar al usuari en el missatge de telegram.
+
+
+
+- Resultats de retorno dels comandos.
+
+    - 0 - S´ha executat l´stage de manera exitosa.
+
+        - "Identificador de l´stage" s´ha executat exitosament - ✅
+
+    - 1 - S´ha executat l´stage però no de manera exitosa.
+
+        - "Identificador de l´stage" ha trovat errors - ❌ | ha fallat - ❌
+
+- Imatge del resultat d´un missatge a telegram amb errates.
 
 
 
