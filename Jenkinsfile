@@ -87,21 +87,28 @@ pipeline {
                 }
             }
         }
-        stage('Notification Telegram') {
-            steps {
-                script {
-                    sh 'npm install node-telegram-bot-api'
-                    sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.RESULT_LINTER}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
-                }
+
+        //---------------------------------------------------------------------------------------------------------
+        //ANOTACIÓ:
+        //He escrit les dos possibilitats, personalment m´agrada més la segona ja que forcem a que s´execute sempre 
+        // passe el que  asse a la resta de stages, i ens dona feedback al telegram del que pot estar passant.        
+        //---------------------------------------------------------------------------------------------------------
+        
+        // stage('Notification Telegram') {
+        //     steps {
+        //         script {
+        //             sh 'npm install node-telegram-bot-api'
+        //             sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.RESULT_LINTER}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
+        //         }
+        //     }
+        // }
+    }
+    post {
+        always {
+            script {
+                sh 'npm install node-telegram-bot-api'
+                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.RESULT_LINTER}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
             }
         }
     }
-    // post {
-    //     always {
-    //         script {
-    //             sh 'npm install node-telegram-bot-api'
-    //             sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.RESULT_LINTER}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
-    //         }
-    //     }
-    // }
 }
