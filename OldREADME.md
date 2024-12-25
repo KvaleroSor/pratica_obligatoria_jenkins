@@ -54,6 +54,13 @@ Una vegada configurats els paràmetres, donarem pas a la següent configuració,
 
 ![Configurant la nostra pipeline 2](./img/9-%20configurant%20pipeline.png)
 
+- IMPORTANT! 
+
+ - Copiar de forma correcta el enllaç al repositori per evitar-se errades de conexió.
+ - Afegir la branca amb la que vullguem treballar.
+
+Els dos punts que marquem com a importants els tinguem resaltats amb un recuadre blanc.
+
 
 
 
