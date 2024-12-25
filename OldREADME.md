@@ -96,4 +96,39 @@ Els dos punts que marquem com a importants els tinguem resaltats amb un recuadre
 Seguint els següents passos dueriem de poder crear una Pipeline sense cap problema. 
 
 
+--- 
+
+### Instal·lant el plugin Build Monitor View.
+
+Per poder instal·lar el plugin el primer que farem serà dirigir-se al apartat "Administrar jenkins".
+
+![Instal·lar plugin pas 1](./img/27-%20instalar%20plugin%20pas%201.png)
+
+---
+
+Una vegada situats dins de l´administrador de Jenkins, navegarem fins l´apartat "Plugins".
+
+![Instal·lar plugin pas 2](./img/28-%20instalar%20plugin%20pas%202.png)
+
+---
+
+En l´apartat "Available plugins" buscarem per nom el plugin que ens interesa per al nostre projecte i l´instal·larem.
+
+![Instal·lar plugin pas 3](./img/2-%20instalant%20pluggin.png)
+
+Una vegada instal·lat el plugin el podrem veure disponible a l´apartat "Installed plugins".
+
+---
+
+Situats al nostre panel de control veurem a la part superior 
+
+### Creació pràctica Jenkins.
+
+Per a la creació de la nostra pràctica hem agafat el còdig d´una pràctica anterior que es basava en React. Per tal de treballar sense que 
+les nostres modificacions afecten al còdig de la branca principal, creem la branca "ci_jenkins".
+
+![Creació de la branca de treball](./img/1-%20creant%20branca%20ci_jenkins.png)
+
+
+
 
