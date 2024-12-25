@@ -268,9 +268,91 @@ afegirà una insignia darrere del text "RESULTADO DE LOS ÚLTIMOS TESTS".
 
 ![Update Readme 4](./img/41-%20resultat%20dels%20tests%20exitos%20al%20readme.png)
 
+
 - Stage que executa l´script abans mostrat.
 
-![Update Readme 2](./img/39-%20update%20stage%20.png)
+![Update Readme 5](./img/39-%20update%20stage%20.png)
+
+---
+
+#### Pas 6 - Push Changes.
+
+Aques stage el que farà serà en afegir els canvis, fer commit i push deixos canvis al repositori remot de qualsevol arxiu que haja canviat i estigua 
+esperant per ser afegit a la zona de stage.
+
+- El script que realitzarà aquesta acció.
+
+    - Com podrem veure a aquest stage, ja estem fent uns de les credencials abans creades a Jenkins i declarades a l´element "Environment" del nostre arxiu Jenkinsfile.
+
+![Push stage 1](./img/42-%20script%20push%20stage.png)
+
+- Una vegada executada la nostra "Pipeline" i corrent aquest stage, aquest serà el resultat que podrem observar.
+
+    - El missatge que apareixerà al commit seran els paràmetres que abans també gastavem, "executor" i "motiu".
+
+![Push satge 2](./img/17-%20corrent%20push%20stage.png)
+
+- El stage que executarà el script es el següent.
+
+![Push stage 3](./img/43-%20stage%20push.png)
+
+---
+
+#### Pas 7 - Deploy to Vercel.
+
+Este stage s´encarregarà de desplegar el nostre projecte en vercel. En aqueste stage podrem veure com també fem us de les credencials creades anteriorment
+al nostre Jenkins.
+
+- Script que executarà els comandos per al desplegue.
+
+![Deploy stage 1](./img/44-%20script%20desplegue%20vercel.png)
+
+- El resultat que podrem veure una vegada estiga el còdig desplegat a vercel de forma exitosa serà el següent.
+
+![Deploy stage 2](./img/18-%20corrent%20deploy%20.png)
+
+- El stage que executarà el script es aquest.
+
+![Deploy stage 3](./img/45-%20stage%20deploy.png)
+
+- Nota.
+
+    - En aquest stage puguem veure una particularitat, i es que ens trobem amb l´apartat "when/expression", açò fa referencia a que aquest stage s´esperarà a que l´últim stage davant dell s´execute, i s´assegurarà de que eixe mateix stage s´ha executat correctament, ja que qualsevol dels stages que vagen per davant si no s´executen com toca, el stage que està davant del "Deploy to vercel" no s´executarà.
+
+    En conclusió, es una forma de fer que aquest stage s´espere a la correcta execució dels stages que el precedixen.
+
+---
+
+#### Pas 8 - Notifiació Telegram.
+
+En aquest stage també trobem credencials mostrades anteriorment. Podrem veure que necessitem gastar un token de telegram per poder conectar-se al nostre bot, a més a més, 
+uns dels paràmetres d´entrada serà el identificador del chat/bot amb el que interactuarem, més en concret el paràmetre "chatId".
+
+Aquest s´executarà al post, una vegada s´hagen executat tots els stages, arrecollirem amb variables d´entorn els valors de retorno dels comandos i mitjantsan un script 
+gestionarem eixes dades de la següent forma.
+
+- Script que gestiona el missatge de telegram.
+
+![Notificacio stage 1](./img/46-%20script%20telegram.png)
+
+En aquest script gestionem les variables d´entorn i la funció que s´encarrega d´enviar el missatge al nostre bot.
+
+Hem afegit les "ternaries" per tal de mostrar un missatge més clar al usuari en el missatge de telegram.
+
+
+
+- Resultats de retorno dels comandos.
+
+    - 0 - S´ha executat l´stage de manera exitosa.
+
+        - "Identificador de l´stage" s´ha executat exitosament - ✅
+
+    - 1 - S´ha executat l´stage però no de manera exitosa.
+
+        - "Identificador de l´stage" ha trovat errors - ❌ | ha fallat - ❌
+
+- Imatge del resultat d´un missatge a telegram amb errates.
+
 
 
 
