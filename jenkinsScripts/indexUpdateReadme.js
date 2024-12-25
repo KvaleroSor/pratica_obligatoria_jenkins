@@ -2,9 +2,6 @@ const fs = require('fs').promises;
 
 async function main() {
     try {        
-        // console.log('Starting the script...');
-        // console.log('Mostrem el directori actual de treball:', process.cwd());
-
         const resultat_test = process.env.RESULT_TEST_JEST;
         console.log('Resultat dels tests ->', resultat_test);
         
