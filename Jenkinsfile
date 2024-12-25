@@ -56,13 +56,13 @@ pipeline {
 
                 // Executant linter
                 script {
-                    def lintOutput = sh(script: 'npm run lint', returnStdout: true).trim()
-                    def lintStatus = sh(script: 'npm run lint', returnStatus: true)
-                    env.RESULT_LINTER = lintOutput
-                    env.LINT_STATUS = lintStatus.toString()
-                    echo "Resultat linter -> '${env.RESULT_LINTER}'"
-                    echo "Lint status -> '${env.LINT_STATUS}'"
-                    sh "node ./jenkinsScripts/indexLinter.js '${env.LINT_STATUS}' '${env.RESULT_LINTER}'"
+                    env.RESULT_LINTER = sh(script: 'npm run lint', returnStdout: true).trim()
+                    // def lintStatus = sh(script: 'npm run lint', returnStatus: true)
+                    // env.RESULT_LINTER = lintOutput
+                    // env.LINT_STATUS = lintStatus.toString()
+                    // echo "Resultat linter -> '${env.RESULT_LINTER}'"
+                    // echo "Lint status -> '${env.LINT_STATUS}'"
+                    sh "node ./jenkinsScripts/indexLinter.js '${env.RESULT_LINTER}'"
                 }
             }
         }
@@ -116,7 +116,7 @@ pipeline {
         always {
             script {
                 sh 'npm install node-telegram-bot-api'
-                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.LINT_STATUS}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
+                sh "node ./jenkinsScripts/indexNotificationTelegram.js '${env.chatId}' '${env.RESULT_LINTER}' '${env.RESULT_TEST_JEST}' '${env.RESULT_UPDATE_README}' '${env.RESULT_DEPLOY}'"
             }
         }
     }
