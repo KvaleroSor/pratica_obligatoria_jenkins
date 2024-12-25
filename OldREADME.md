@@ -120,7 +120,8 @@ Una vegada instal·lat el plugin el podrem veure disponible a l´apartat "Instal
 
 ---
 
-Situats al nostre panel de control veurem a la part superior 
+Situats al nostre panel de control veurem a la part superior un simbol de "+" per poder afegir noves vistes. Crearem una nova vista utilitzant el 
+plugin "Build Monitor View". 
 
 ### Creació pràctica Jenkins.
 
