@@ -21,6 +21,8 @@ console.log(`
 (UPDATE_README_RESULT.toString() === '0') ? UPDATE_README_RESULT = 'Update_readme s´ha executat exitosament - ✅' : UPDATE_README_RESULT = 'Update_readme ha fallat - ❌';
 (DEPLOY_RESULT.toString() === '0') ? DEPLOY_RESULT = 'Deploy_to_Verce s´ha executat exitosament - ✅' : DEPLOY_RESULT = 'Deploy_to_Verce ha fallat - ❌';
 
+//Template del missatge que ens enviarem a telegram.
+
 const msg = `S´ha executat la pipeline de jenkins amb els següents resultats: \n 
 - Linter_stage: ${LINTER_RESULT} \n
 - Tests_stage: ${TEST_RESULT} \n
