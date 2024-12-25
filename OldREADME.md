@@ -176,7 +176,7 @@ I el resultat una vegada haja corregut la nostra "Pipeline" serà la següent.
 El linter s´encarregarà de revisar el nostre còdig per a que es complixquen una serie de regles, per tal de que tot el còdig
 seguixca el mateix patrò, ens ajuda per estandaritzar.
 
-Imagte del stage de linter.
+Imagte del stage de linter, s´encarregarà de correr linter.
 
 ![Linter stage 1](./img/34-%20stage%20linter.png)
 
@@ -196,6 +196,28 @@ més vistosa el resultat de linter.
 
 ![Linter stage 4](./img/35-%20stage%20linter%20.png)
 
+--- 
+
+#### Pas 3 - Test Stage.
+
+Els tests que realitzarem son uns tests simples sobre la funció "handler" ubicada en el nostre arxiu "pages/api/users/index.js"
+i seran per comprobar rutes.
+
+Imatge de l´stage, s´encarregarà de correr jest.
+
+![Test stage 1](./img/36-%20stage%20test.png)
+
+La funció que farà les proves estarà ubicada dins d´un directori "tests" i s´anomena "handler.tests.js", es la següent.
+
+![Test stage 2](./img/15-%20handler-test-js%20afegit%20al%20projecte%20per%20als%20tests.png)
+
+Per poder correr els tests amb jest utilitzant JavaScript com utilitzem al nostre còdig crearem un arxiu ".babelrc" que serà el encarregat en fer transpilacions, açò ens facilitarà l´eina ja que si el nostre còdig utilitza ferramentes més novedoses de JavaScript que no siguen compatibles amb totes les versions de Node.js o navegadors.
+
+En conclusió, quan utilitzem Jest per a fer tests, podem configurar babel per a que transpile el nostre còdig abans de que Jest el excute.
+
+Arxiu .babelrc.
+
+![Test stage 3](./img/37-%20stage%20test%20babel.png)
 
 
 
