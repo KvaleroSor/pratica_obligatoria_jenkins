@@ -158,9 +158,18 @@ Per a poder treballar amb petició de dades al nostre "Jenkinsfile" hauren d´ut
 
 ![Petició de dades 1](./img/32-%20peticio%20de%20dades.png)
 
+També haurem d´afegir un stage que gestione les dades que volem introduir per paràmetres.
+
+![]
+
 En el moment creem aquest apartat en el nostre "Jenkinsfile" quan executem la nostra "Pipeline" ens apareixerà de la següent forma.
 
-!
+![Peticíó de dades 2](./img/11-%20executant%20peticio%20de%20dades.png)
+
+I el resultat una vegada haja corregut la nostra "Pipeline" serà la següent.
+
+![Petició de dades 3](./img/10-%20executant%20peticio%20de%20dades.png)
+
 
 
 
